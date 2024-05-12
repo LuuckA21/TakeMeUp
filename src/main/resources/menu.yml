@@ -1,0 +1,74 @@
+Info_Menu:
+  Title: "Info menu"
+
+  Spawn_Location_Button:
+    Material: MAP
+    Name: "Spawn location"
+    Lore:
+      - ""
+      - "Current: {x} | {y} | {z}"
+      - ""
+      - "&7(Left click)"
+      - "&6Update coordinates"
+      - ""
+      - "&7(Right click)"
+      - "&aTeleport to coordinates"
+  Offset_Button:
+    Material: PISTON
+    Name: "Offset"
+    Lore:
+      - ""
+      - "Current: {offset}"
+      - ""
+      - "Click to update"
+  Status_On_Button:
+    Material: GREEN_WOOL
+    Name: "&7Status &2ON"
+    Lore:
+      - ""
+      - "Click to set"
+      - "&7Status &4OFF"
+  Status_Off_Button:
+    Material: RED_WOOL
+    Name: "&7Status &4OFF"
+    Lore:
+      - ""
+      - "Click to set"
+      - "&7Status &2ON"
+  Remove_Button:
+    Material: BARRIER
+    Name: "&4&lRemove spawn point"
+    Lore:
+      - ""
+      - "&7The config of the"
+      - "&7current world will"
+      - "&7be removed permanently."
+
+Confirm_Remove_Menu:
+  Title: "&0Confirm removal"
+
+  Confirm_Button:
+    Material: RED_WOOL
+    Name: "&6&lRemove spawn point"
+    Lore:
+      - ""
+      - "&7Confirm that will remove"
+      - "&7spawn point permanently."
+      - "&cCannot be undone."
+  Return_Button:
+    Material: OAK_DOOR
+    Name: "&4&lReturn"
+    Lore:
+      - ""
+      - "Return back."
+
+World_Config_List_Menu:
+  Title: "World list"
+
+  World_Button:
+    Material: GRASS_BLOCK
+    Name: "{world} config"
+    Lore:
+      - ""
+      - "Click to open"
+      - "{world} config"

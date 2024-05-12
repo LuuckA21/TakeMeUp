@@ -1,0 +1,138 @@
+# !-----------------------------------------------------------------------------------------------!
+#                              Welcome to the localization file.
+# !-----------------------------------------------------------------------------------------------!
+#
+#   The localization/ folder stores various localization files. Use the suggested naming
+#   convention message_LANGUAGE.yml.
+#
+#   COLOR CODES are supported with the '&' character.
+#      - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
+#      - When you use them, place quotes around the message like this: "Hello &cworld."
+#       - To use HEX colors, use #123456 syntax: "Hello #123456world."
+#
+# !-----------------------------------------------------------------------------------------------!
+
+# -------------------------------------------------------------------------------------------------
+# Messages related to commands
+# -------------------------------------------------------------------------------------------------
+Commands:
+  # The message shown when there is a fatal error running this command
+  Error: "&4&lOups! &cThe command failed :( Check the console and report the error."
+
+  # The message shown when player has no permissions to view ANY subcommands in group command.
+  Header_No_Subcommands: "&cThere are no arguments for this command."
+  Header_No_Subcommands_Permission: "&cYou don't have permissions to view any subcommands."
+
+  # Key for when plugin is reloading or is disabled
+  Reloading: "reloading"
+  Disabled: "disabled"
+
+  # The message shown when plugin is reloading or was disabled and player attempts to run command
+  Use_While_Null: "&cCannot use this command while the plugin is {state}."
+
+  # The message shown when console is denied executing a command.
+  No_Console: "&cYou may only use this command as a player."
+
+  # Keys below indicate an invalid action or input
+  Invalid_Argument: "&cInvalid argument. Run &6/{label} ? &cfor help."
+  Invalid_Sub_Argument: "&cInvalid argument. Run '/{label} {0}' for help."
+  Invalid_Argument_Multiline: "&cInvalid argument. Usage:"
+  Invalid_Number: "The number must be a whole or a decimal number. Got: '{input}'"
+
+  # The keys below are shown as text on /takemeup help command.
+  Label_Description: "&c&lDescription:"
+  Label_Optional_Args: "optional arguments"
+  Label_Required_Args: "required arguments"
+  Label_Usage: "&c&lUsage:"
+  Label_Subcommand_Description: " &f/{label} {sublabel} {usage+}{dash+}{description}"
+
+  # The keys below are shown as hover tooltip on /command help menu.
+  Help_Tooltip_Description: "&7Description: &f{description}"
+  Help_Tooltip_Permission: "&7Permission: &f{permission}"
+  Help_Tooltip_Usage: "&7Usage: &f"
+
+  # The keys below are used in the /takemeup reload|rl command
+  Reload_Description: "Reload the configuration."
+  Reload_Started: "Reloading plugin's data, please wait.."
+  Reload_Success: "&6{plugin_name} {plugin_version} has been reloaded."
+  Reload_Fail: "&4Oups, &creloading failed! See the console for more information. Error: {error}"
+  Reload_File_Load_Error: "&4Oups, &cthere was a problem loading files from your disk! See the console for more information. {plugin_name} has not been reloaded."
+
+  # The keys below are used in the /takemeup debug command
+  Debug_Description: "ZIP your settings for reporting bugs."
+  Debug_Preparing: "&6Preparing debug log..."
+  Debug_Success: "&2Successfuly copied {amount} file(s) to debug.zip. Your sensitive MySQL information has been removed from yml files. Please upload it via ufile.io and send it to us for review."
+  Debug_Copy_Fail: "&cCopying files failed on file {file} and it was stopped. See console for more information."
+  Debug_Zip_Fail: "&cCreating a ZIP of your files failed, see console for more information. Please ZIP debug/ folder and send it to us via ufile.io manually."
+
+  # The keys below are used in the /takemeup permissions|perms command
+  Perms_Description: "List all permissions the plugin has."
+  Perms_Usage:
+  Perms_Header: "Listing All Plugin Permissions"
+  Perms_Main: "Main"
+  Perms_Permissions: "Permissions:"
+  Perms_True_By_Default: "&7[true by default]"
+  Perms_Info: "&7Info: &f"
+  Perms_Default: "&7Default? "
+  Perms_Applied: "&7Do you have it? "
+  Perms_Yes: "&2yes"
+  Perms_No: "&cno"
+
+  # The keys below are used in the /takemeup info command
+  Info_Description: "Open current world's info menu"
+
+  # The keys below are used in the /takemeup spawn command
+  Spawn_Description: "Set or Update spawn point in the current world"
+  Spawn_Created: "Spawn point created!"
+  Spawn_Updated: "Spawn point updated!"
+  Spawn_Not_Set: "Spawn point is not set in the current world! Type '/takemeup spawn' to set"
+  Spawn_Not_Same_World: "You must be on the same world"
+
+  # The keys below are used in the /takemeup remove command
+  Remove_Description: "Remove spawn point in the current world"
+  Remove_Success: "Spawn point removed!"
+
+  # The keys below are used in the /takemeup status command
+  Status_Description: "Switch on/off teleport in the current world"
+  Status_On: "Status &2ON"
+  Status_Off: "Status &4OFF"
+  Status_Fail: "Status '{0}' not valid. Type /{label} <on | off>"
+
+  # The keys below are used in the /takemeup yoffset command
+  Offset_Description: "Set offset in the current world"
+
+  List_Description: "Open world config list menu"
+  List_Fail: "Please create a world config first Type '/takemeup spawn' to set"
+
+Menu:
+  Cannot_Open_During_Conversation: "&cType 'exit' to quit your conversation before opening menu."
+  Item_Deleted: "&2The {item} has been deleted."
+  Error: "&cOups! There was a problem with this menu! Please contact the administrator to review the console for details."
+  Page_Previous: "&8<< &fPage {page}"
+  Page_Next: "Page {page} &8>>"
+  Page_First: "&7First Page"
+  Page_Last: "&7Last Page"
+  Tooltip_Info: "&fMenu Information"
+
+# -------------------------------------------------------------------------------------------------
+# Messages related to player conversation where server is waiting for his chat input
+# -------------------------------------------------------------------------------------------------
+Conversation:
+  Error: "&cOups! There was a problem in this conversation! Please contact the administrator to review the console for details."
+  Conversation_Cancelled: "Your pending chat answer has been canceled."
+  Conversation_Cancelled_Inactive: "Your pending chat answer has been canceled because you were inactive."
+
+  # Messages related to Offset prompt
+  Offset_Question: "Write in chat the offset value! Type 'exit' to quit"
+  Offset_Success: "Offset updated!"
+  Offset_Fail: "The Offset must be a whole number. Got: '{offset}'"
+
+# -------------------------------------------------------------------------------------------------
+# Messages shown when player runs a command he lacks permission for
+# -------------------------------------------------------------------------------------------------
+No_Permission: "&cNo permission: {permission}"
+
+# -------------------------------------------------------------------------------------------------
+# Do not change this value, otherwise it will corrupt your plugin installation!
+# -------------------------------------------------------------------------------------------------
+Version: 1

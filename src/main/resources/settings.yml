@@ -1,0 +1,27 @@
+# !-----------------------------------------------------------------------------------------------!
+#                       Welcome to the main configuration of ${project.name}#
+# !-----------------------------------------------------------------------------------------------!
+#
+#    COLOR CODES are supported with the '&' character.
+#       - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
+#       - When you use them, place quotes around the message like this: "Hello &cworld."
+#       - To use HEX colors, use #123456 syntax: "Hello #123456world."
+#
+# !-----------------------------------------------------------------------------------------------!
+
+# -------------------------------------------------------------------------------------------------
+# What language should we use for messages? If it exists, the language file will be copied 
+# to your messages/ folder where you can edit it.
+# -------------------------------------------------------------------------------------------------
+Locale: en
+
+# -------------------------------------------------------------------------------------------------
+# The prefix used in front of most chat or console messages. You can manually use it with
+# {plugin_prefix} variable anywhere.
+# -------------------------------------------------------------------------------------------------
+Prefix: "&8[&a${project.name}&8]&7 "
+
+# -------------------------------------------------------------------------------------------------
+# Do not change this value, otherwise it will corrupt your plugin installation!
+# -------------------------------------------------------------------------------------------------
+Version: 1

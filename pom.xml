@@ -5,7 +5,7 @@
 
     <groupId>me.luucka</groupId>
     <artifactId>takemeup</artifactId>
-    <version>1.0.0-BETA</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>TakeMeUp</name>

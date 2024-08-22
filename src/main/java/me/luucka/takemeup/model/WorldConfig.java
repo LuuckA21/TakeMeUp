@@ -3,14 +3,14 @@ package me.luucka.takemeup.model;
 import lombok.Getter;
 import org.bukkit.Location;
 import org.bukkit.World;
-import org.bukkit.entity.Player;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.SerializeUtil;
-import org.mineacademy.fo.remain.Remain;
 import org.mineacademy.fo.settings.ConfigItems;
 import org.mineacademy.fo.settings.YamlConfig;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
 @Getter
 public class WorldConfig extends YamlConfig {
@@ -88,7 +88,7 @@ public class WorldConfig extends YamlConfig {
 
 	public static void init() {
 		LOADED_WORLD_CONFIG.loadItems();
-		TeleportManager.checkFallScheduler();
+//		TeleportManager.fallScheduler();
 	}
 
 	public static void createNew(Location location) {
@@ -138,37 +138,31 @@ public class WorldConfig extends YamlConfig {
 		return isOn() ? Status.OFF : Status.ON;
 	}
 
-	public static class TeleportManager {
-
-		private static final Set<UUID> PLAYER_IN_TELEPORT = new HashSet<>();
-
-		public static void removePlayerAfterTeleport(final Player player) {
-			PLAYER_IN_TELEPORT.remove(player.getUniqueId());
-		}
-
-		public static boolean isPlayerInTeleport(final Player player) {
-			return PLAYER_IN_TELEPORT.contains(player.getUniqueId());
-		}
-
-		private static void checkFallScheduler() {
-			Common.runTimerAsync(
-					20,
-					() -> {
-						Collection<? extends Player> onlinePlayers = Remain.getOnlinePlayers();
-						onlinePlayers.parallelStream().forEach(player -> {
-							World world = player.getWorld();
-							WorldConfig.find(world).ifPresent(worldConfig -> {
-								if (worldConfig.isOn() && player.getLocation().getY() < worldConfig.getOffset()) {
-									PLAYER_IN_TELEPORT.add(player.getUniqueId());
-									Common.runLater(() -> {
-										player.teleport(worldConfig.getSpawnLocation());
-									});
-								}
-							});
-						});
-					}
-			);
-		}
-	}
+//	public static class TeleportManager {
+//
+//		private static void fallScheduler() {
+//			Common.runTimerAsync(
+//					20,
+//					() -> Remain.getOnlinePlayers().stream()
+//							.filter(player -> {
+//								WorldConfig worldConfig = WorldConfig.find(player.getWorld()).orElse(null);
+//								return worldConfig != null
+//										&& worldConfig.isOn()
+//										&& player.getLocation().getY() < worldConfig.getOffset();
+//							})
+//							.forEach(player -> WorldConfig.find(player.getWorld()).ifPresent(worldConfig -> {
+//										CompProperty.INVULNERABLE.apply(player, true);
+//										Common.runLater(() -> player.teleport(worldConfig.getSpawnLocation()));
+//										Common.runLaterAsync(2, () -> {
+//													player.playEffect(player.getLocation(), Effect.ENDER_SIGNAL, null);
+//													CompSound.SUCCESSFUL_HIT.play(player);
+//												}
+//										);
+//										Common.runLaterAsync(50, () -> CompProperty.INVULNERABLE.apply(player, false));
+//									}
+//							))
+//			);
+//		}
+//	}
 
 }

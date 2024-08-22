@@ -15,6 +15,7 @@ public class TakeMeUp extends SimplePlugin {
 	@Override
 	protected void onReloadablesStart() {
 		WorldConfig.init();
+		TeleportManager.init();
 	}
 
 	@Override

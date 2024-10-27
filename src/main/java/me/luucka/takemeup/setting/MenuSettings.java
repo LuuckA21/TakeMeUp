@@ -13,20 +13,20 @@ public class MenuSettings extends YamlStaticConfig {
 		loadConfiguration("menu.yml");
 	}
 
-	public static final class InfoMenu {
-		public static String TITLE = "Info menu";
+	public static final class EditMenu {
+		public static String TITLE = "Edit menu";
 
 		private static void init() {
-			setPathPrefix("Info_Menu");
+			setPathPrefix("Edit_Menu");
 
 			if (isSetDefault("Title"))
 				TITLE = getString("Title");
 		}
 
-		public static final class SpawnLocationButton {
+		public static final class ReturnLocationButton {
 			public static CompMaterial MATERIAL = CompMaterial.MAP;
 
-			public static String NAME = "Spawn location";
+			public static String NAME = "Return location";
 
 			public static List<String> LORE = Arrays.asList(
 					"",
@@ -40,7 +40,7 @@ public class MenuSettings extends YamlStaticConfig {
 			);
 
 			private static void init() {
-				setPathPrefix("Info_Menu.Spawn_Location_Button");
+				setPathPrefix("Edit_Menu.Return_Location_Button");
 
 				if (isSetDefault("Material"))
 					MATERIAL = getMaterial("Material");
@@ -53,20 +53,20 @@ public class MenuSettings extends YamlStaticConfig {
 			}
 		}
 
-		public static final class OffsetButton {
+		public static final class YLimitButton {
 			public static CompMaterial MATERIAL = CompMaterial.PISTON;
 
-			public static String NAME = "Offset";
+			public static String NAME = "Y Limit";
 
 			public static List<String> LORE = Arrays.asList(
 					"",
-					"Current: {offset}",
+					"Current: &6{ylimit}",
 					"",
 					"Click to update"
 			);
 
 			private static void init() {
-				setPathPrefix("Info_Menu.Offset_Button");
+				setPathPrefix("Edit_Menu.Y_Limit_Button");
 
 				if (isSetDefault("Material"))
 					MATERIAL = getMaterial("Material");
@@ -86,12 +86,11 @@ public class MenuSettings extends YamlStaticConfig {
 
 			public static List<String> LORE = Arrays.asList(
 					"",
-					"Click to set",
-					"&7Status &4OFF"
+					"Click to set &4OFF"
 			);
 
 			private static void init() {
-				setPathPrefix("Info_Menu.Status_On_Button");
+				setPathPrefix("Edit_Menu.Status_On_Button");
 
 				if (isSetDefault("Material"))
 					MATERIAL = getMaterial("Material");
@@ -111,12 +110,11 @@ public class MenuSettings extends YamlStaticConfig {
 
 			public static List<String> LORE = Arrays.asList(
 					"",
-					"Click to set",
-					"&7Status &2ON"
+					"Click to set &2ON"
 			);
 
 			private static void init() {
-				setPathPrefix("Info_Menu.Status_Off_Button");
+				setPathPrefix("Edit_Menu.Status_Off_Button");
 
 				if (isSetDefault("Material"))
 					MATERIAL = getMaterial("Material");
@@ -132,7 +130,7 @@ public class MenuSettings extends YamlStaticConfig {
 		public static final class RemoveButton {
 			public static CompMaterial MATERIAL = CompMaterial.BARRIER;
 
-			public static String NAME = "&4&lRemove spawn point";
+			public static String NAME = "&4&lRemove return location";
 
 			public static List<String> LORE = Arrays.asList(
 					"",
@@ -169,12 +167,12 @@ public class MenuSettings extends YamlStaticConfig {
 		public static final class ConfirmButton {
 			public static CompMaterial MATERIAL = CompMaterial.RED_WOOL;
 
-			public static String NAME = "&6&lRemove spawn point";
+			public static String NAME = "&6&lRemove return location";
 
 			public static List<String> LORE = Arrays.asList(
 					"",
 					"&7Confirm that will remove",
-					"&7spawn point permanently.",
+					"&7return location permanently.",
 					"&cCannot be undone."
 			);
 
@@ -204,42 +202,6 @@ public class MenuSettings extends YamlStaticConfig {
 
 			private static void init() {
 				setPathPrefix("Confirm_Remove_Menu.Return_Button");
-
-				if (isSetDefault("Material"))
-					MATERIAL = getMaterial("Material");
-
-				if (isSetDefault("Name"))
-					NAME = getString("Name");
-
-				if (isSetDefault("Lore"))
-					LORE = getStringList("Lore");
-			}
-		}
-	}
-
-	public static final class WorldConfigListMenu {
-		public static String TITLE = "World list";
-
-		private static void init() {
-			setPathPrefix("World_Config_List_Menu");
-
-			if (isSetDefault("Title"))
-				TITLE = getString("Title");
-		}
-
-		public static final class WorldButton {
-			public static CompMaterial MATERIAL = CompMaterial.RED_WOOL;
-
-			public static String NAME = "World list";
-
-			public static List<String> LORE = Arrays.asList(
-					"",
-					"Click to open",
-					"{world} config"
-			);
-
-			private static void init() {
-				setPathPrefix("World_Config_List_Menu.World_Button");
 
 				if (isSetDefault("Material"))
 					MATERIAL = getMaterial("Material");

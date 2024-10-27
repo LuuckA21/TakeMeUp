@@ -18,9 +18,9 @@ public class RemoveButton extends ButtonRemove {
 	@Override
 	public ItemStack getItem() {
 		return ItemCreator
-				.of(MenuSettings.InfoMenu.RemoveButton.MATERIAL)
-				.name(MenuSettings.InfoMenu.RemoveButton.NAME)
-				.lore(MenuSettings.InfoMenu.RemoveButton.LORE)
+				.of(MenuSettings.EditMenu.RemoveButton.MATERIAL)
+				.name(MenuSettings.EditMenu.RemoveButton.NAME)
+				.lore(MenuSettings.EditMenu.RemoveButton.LORE)
 				.flags(CompItemFlag.HIDE_ATTRIBUTES)
 				.make();
 	}

@@ -1,6 +1,7 @@
 package me.luucka.takemeup.command;
 
-import me.luucka.takemeup.command.takemeupgroup.*;
+import me.luucka.takemeup.command.takemeupgroup.CreateCommand;
+import me.luucka.takemeup.command.takemeupgroup.EditMenuCommand;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.annotation.AutoRegister;
 import org.mineacademy.fo.command.DebugCommand;
@@ -23,12 +24,8 @@ public final class TakeMeUpCommandGroup extends SimpleCommandGroup {
 
 	@Override
 	protected void registerSubcommands() {
-		registerSubcommand(new SpawnCommand(this));
-		registerSubcommand(new RemoveCommand(this));
-		registerSubcommand(new OffsetCommand(this));
-		registerSubcommand(new StatusCommand(this));
-		registerSubcommand(new InfoMenuCommand(this));
-		registerSubcommand(new WorldConfigListMenuCommand(this));
+		registerSubcommand(new CreateCommand(this));
+		registerSubcommand(new EditMenuCommand(this));
 		registerSubcommand(new ReloadCommand());
 		registerSubcommand(new DebugCommand());
 	}

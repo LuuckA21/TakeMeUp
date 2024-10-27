@@ -65,44 +65,19 @@ Commands:
   Debug_Copy_Fail: "&cCopying files failed on file {file} and it was stopped. See console for more information."
   Debug_Zip_Fail: "&cCreating a ZIP of your files failed, see console for more information. Please ZIP debug/ folder and send it to us via ufile.io manually."
 
-  # The keys below are used in the /takemeup permissions|perms command
-  Perms_Description: "List all permissions the plugin has."
-  Perms_Usage:
-  Perms_Header: "Listing All Plugin Permissions"
-  Perms_Main: "Main"
-  Perms_Permissions: "Permissions:"
-  Perms_True_By_Default: "&7[true by default]"
-  Perms_Info: "&7Info: &f"
-  Perms_Default: "&7Default? "
-  Perms_Applied: "&7Do you have it? "
-  Perms_Yes: "&2yes"
-  Perms_No: "&cno"
+  # The keys below are used in the /takemeup edit command
+  Edit_Menu_Description: "Open current world's edit menu"
 
-  # The keys below are used in the /takemeup info command
-  Info_Description: "Open current world's info menu"
+  # The keys below are used in the /takemeup create command
+  Return_Location_Description: "Set or Edit return location in the current world"
+  Return_Location_Created: "Return location created!"
+  Return_Location_Updated: "Return location updated!"
+  Return_Location_Not_Set: "Return location is not set in the current world! Type '/{label} create' to set"
+  Return_Location_Not_Same_World: "You must be on the same world"
 
-  # The keys below are used in the /takemeup spawn command
-  Spawn_Description: "Set or Update spawn point in the current world"
-  Spawn_Created: "Spawn point created!"
-  Spawn_Updated: "Spawn point updated!"
-  Spawn_Not_Set: "Spawn point is not set in the current world! Type '/takemeup spawn' to set"
-  Spawn_Not_Same_World: "You must be on the same world"
-
-  # The keys below are used in the /takemeup remove command
-  Remove_Description: "Remove spawn point in the current world"
-  Remove_Success: "Spawn point removed!"
-
-  # The keys below are used in the /takemeup status command
-  Status_Description: "Switch on/off teleport in the current world"
-  Status_On: "Status &2ON"
-  Status_Off: "Status &4OFF"
-  Status_Fail: "Status '{0}' not valid. Type /{label} <on | off>"
-
-  # The keys below are used in the /takemeup yoffset command
-  Offset_Description: "Set offset in the current world"
-
+  # The keys below are used in the /takemeup list command
   List_Description: "Open world config list menu"
-  List_Fail: "Please create a world config first Type '/takemeup spawn' to set"
+  List_Fail: "Please create a world config first Type '/{label} create' to set"
 
 Menu:
   Cannot_Open_During_Conversation: "&cType 'exit' to quit your conversation before opening menu."
@@ -122,10 +97,10 @@ Conversation:
   Conversation_Cancelled: "Your pending chat answer has been canceled."
   Conversation_Cancelled_Inactive: "Your pending chat answer has been canceled because you were inactive."
 
-  # Messages related to Offset prompt
-  Offset_Question: "Write in chat the offset value! Type 'exit' to quit"
-  Offset_Success: "Offset updated!"
-  Offset_Fail: "The Offset must be a whole number. Got: '{offset}'"
+  # Messages related to Y limit prompt
+  Y_Limit_Question: "Write in chat the Y limit value! Type 'exit' to quit"
+  Y_Limit_Success: "Y limit updated!"
+  Y_Limit_Fail: "The Y limit must be a whole number. Got: '{ylimit}'"
 
 # -------------------------------------------------------------------------------------------------
 # Messages shown when player runs a command he lacks permission for

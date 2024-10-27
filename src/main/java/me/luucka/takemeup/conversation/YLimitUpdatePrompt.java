@@ -1,6 +1,6 @@
 package me.luucka.takemeup.conversation;
 
-import me.luucka.takemeup.model.WorldConfig;
+import me.luucka.takemeup.model.DiskWorldConfig;
 import me.luucka.takemeup.setting.Messages;
 import org.bukkit.conversations.ConversationContext;
 import org.bukkit.conversations.Prompt;
@@ -11,18 +11,18 @@ import org.mineacademy.fo.Valid;
 import org.mineacademy.fo.conversation.SimplePrompt;
 import org.mineacademy.fo.model.Replacer;
 
-public class OffsetUpdatePrompt extends SimplePrompt {
+public class YLimitUpdatePrompt extends SimplePrompt {
 
-	private final WorldConfig config;
+	private final DiskWorldConfig config;
 
-	public OffsetUpdatePrompt(WorldConfig config, boolean openMenu) {
+	public YLimitUpdatePrompt(DiskWorldConfig config, boolean openMenu) {
 		super(openMenu);
 		this.config = config;
 	}
 
 	@Override
 	protected String getPrompt(ConversationContext context) {
-		return Messages.Conversation.OFFSET_QUESTION;
+		return Messages.Conversation.Y_LIMIT_QUESTION;
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class OffsetUpdatePrompt extends SimplePrompt {
 
 	@Override
 	protected String getFailedValidationText(ConversationContext context, String invalidInput) {
-		Messenger.error(getPlayer(context), Replacer.replaceArray(Messages.Conversation.OFFSET_FAIL, "offset", invalidInput));
+		Messenger.error(getPlayer(context), Replacer.replaceArray(Messages.Conversation.Y_LIMIT_FAIL, "ylimit", invalidInput));
 		return null;
 	}
 
@@ -40,8 +40,8 @@ public class OffsetUpdatePrompt extends SimplePrompt {
 	@Override
 	protected Prompt acceptValidatedInput(@NotNull ConversationContext conversationContext, @NotNull String input) {
 		int offset = Integer.parseInt(input);
-		config.setOffset(offset);
-		Messenger.success(getPlayer(conversationContext), Messages.Conversation.OFFSET_SUCCESS);
+		config.setyLimit(offset);
+		Messenger.success(getPlayer(conversationContext), Messages.Conversation.Y_LIMIT_SUCCESS);
 
 		return END_OF_CONVERSATION;
 	}

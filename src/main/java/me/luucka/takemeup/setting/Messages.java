@@ -21,77 +21,42 @@ public final class Messages extends YamlStaticConfig {
 
 	public static final class Commands {
 
-		public static String INFO_DESCRIPTION = "Open current world's info menu";
+		public static String EDIT_MENU_DESCRIPTION = "Open current world's edit menu";
 
-		public static String SPAWN_DESCRIPTION = "Set or Update spawn point in the current world";
+		public static String RETURN_LOCATION_DESCRIPTION = "Set or Edit return location in the current world";
 
-		public static String SPAWN_CREATED = "Spawn point created!";
+		public static String RETURN_LOCATION_CREATED = "Return location created!";
 
-		public static String SPAWN_UPDATED = "Spawn point updated!";
+		public static String RETURN_LOCATION_UPDATED = "Return location updated!";
 
-		public static String SPAWN_NOT_SET = "Spawn point is not set in the current world! Type '/takemeup spawn' to set";
+		public static String RETURN_LOCATION_NOT_SET = "Return location is not set in the current world! Type '/{label} create' to set";
 
-		public static String SPAWN_NOT_SAME_WORLD = "You must be on the same world";
-
-		public static String REMOVE_DESCRIPTION = "Remove spawn point in the current world";
-
-		public static String REMOVE_SUCCESS = "Spawn point removed!";
-
-		public static String STATUS_DESCRIPTION = "Switch on/off teleport in the current world";
-
-		public static String STATUS_ON = "Status &2ON";
-
-		public static String STATUS_OFF = "Status &4OFF";
-
-		public static String STATUS_FAIL = "Status '{0}' not valid. Type /{label} <on | off>";
-
-		public static String OFFSET_DESCRIPTION = "Set offset in the current world";
+		public static String RETURN_LOCATION_NOT_SAME_WORLD = "You must be on the same world";
 
 		public static String LIST_DESCRIPTION = "Open world config list menu";
 
-		public static String LIST_FAIL = "Please create a world config first Type '/takemeup spawn' to set";
+		public static String LIST_FAIL = "Please create a world config first Type '/{label} create' to set";
 
 		private static void init() {
 			setPathPrefix("Commands");
 
-			if (isSetDefault("Info_Description"))
-				INFO_DESCRIPTION = getString("Info_Description");
+			if (isSetDefault("Edit_Menu_Description"))
+				EDIT_MENU_DESCRIPTION = getString("Edit_Menu_Description");
 
-			if (isSetDefault("Spawn_Description"))
-				SPAWN_DESCRIPTION = getString("Spawn_Description");
+			if (isSetDefault("Return_Location_Description"))
+				RETURN_LOCATION_DESCRIPTION = getString("Return_Location_Description");
 
-			if (isSetDefault("Spawn_Created"))
-				SPAWN_CREATED = getString("Spawn_Created");
+			if (isSetDefault("Return_Location_Created"))
+				RETURN_LOCATION_CREATED = getString("Return_Location_Created");
 
-			if (isSetDefault("Spawn_Updated"))
-				SPAWN_UPDATED = getString("Spawn_Updated");
+			if (isSetDefault("Return_Location_Updated"))
+				RETURN_LOCATION_UPDATED = getString("Return_Location_Updated");
 
-			if (isSetDefault("Spawn_Not_Set"))
-				SPAWN_NOT_SET = getString("Spawn_Not_Set");
+			if (isSetDefault("Return_Location_Not_Set"))
+				RETURN_LOCATION_NOT_SET = getString("Return_Location_Not_Set");
 
-			if (isSetDefault("Spawn_Not_Same_World"))
-				SPAWN_NOT_SAME_WORLD = getString("Spawn_Not_Same_World");
-
-			if (isSetDefault("Remove_Description"))
-				REMOVE_DESCRIPTION = getString("Remove_Description");
-
-			if (isSetDefault("Remove_Success"))
-				REMOVE_SUCCESS = getString("Remove_Success");
-
-			if (isSetDefault("Status_Description"))
-				STATUS_DESCRIPTION = getString("Status_Description");
-
-			if (isSetDefault("Status_On"))
-				STATUS_ON = getString("Status_On");
-
-			if (isSetDefault("Status_Off"))
-				STATUS_OFF = getString("Status_Off");
-
-			if (isSetDefault("Status_Fail"))
-				STATUS_FAIL = getString("Status_Fail");
-
-			if (isSetDefault("Offset_Description"))
-				OFFSET_DESCRIPTION = getString("Offset_Description");
+			if (isSetDefault("Return_Location_Not_Same_World"))
+				RETURN_LOCATION_NOT_SAME_WORLD = getString("Return_Location_Not_Same_World");
 
 			if (isSetDefault("List_Description"))
 				LIST_DESCRIPTION = getString("List_Description");
@@ -103,23 +68,23 @@ public final class Messages extends YamlStaticConfig {
 	}
 
 	public static final class Conversation {
-		public static String OFFSET_QUESTION = "Write in chat the offset value! Type 'exit' to quit";
+		public static String Y_LIMIT_QUESTION = "Write in chat the Y limit value! Type 'exit' to quit";
 
-		public static String OFFSET_SUCCESS = "Offset updated!";
+		public static String Y_LIMIT_SUCCESS = "Y limit updated!";
 
-		public static String OFFSET_FAIL = "The Offset must be a whole number. Got: '{offset}'";
+		public static String Y_LIMIT_FAIL = "The Y limit must be a whole number. Got: '{ylimit}'";
 
 		private static void init() {
 			setPathPrefix("Conversation");
 
-			if (isSetDefault("Offset_Question"))
-				OFFSET_QUESTION = getString("Offset_Question");
+			if (isSetDefault("Y_Limit_Question"))
+				Y_LIMIT_QUESTION = getString("Y_Limit_Question");
 
-			if (isSetDefault("Offset_Success"))
-				OFFSET_SUCCESS = getString("Offset_Success");
+			if (isSetDefault("Y_Limit_Success"))
+				Y_LIMIT_SUCCESS = getString("Y_Limit_Success");
 
-			if (isSetDefault("Offset_Fail"))
-				OFFSET_FAIL = getString("Offset_Fail");
+			if (isSetDefault("Y_Limit_Fail"))
+				Y_LIMIT_FAIL = getString("Y_Limit_Fail");
 
 		}
 	}
